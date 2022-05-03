@@ -58,7 +58,7 @@ class Router
     //Muestra una vista
     public function render($view, $datos = [])
     {
-
+        debuguear("Saludando desde el render");
         foreach ($datos as $key => $value) {
             $$key = $value;
         }
