@@ -40,7 +40,7 @@ class PropiedadController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             //Crea una nueva instancia
-            debuguear($_POST);
+            debuguear($_FILES);
             $propiedad = new Propiedad($_POST['propiedad']);
 
             //Subida de archivos
