@@ -10,6 +10,8 @@ use Controllers\PaginasController;
 
 $router = new Router();
 
+debuguear($db);
+
 //Zona privada
 $router->get('/admin', [PropiedadController::class,'index']);
 $router->get('/propiedades/crear',[PropiedadController::class,'crear']);
