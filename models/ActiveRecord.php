@@ -105,6 +105,7 @@ class ActiveRecord {
     //Subida de archivos
     public function setImagen($imagen)
     {
+        debuguear("Desde set imagen");
         //Elimina la imagen previa si existe
 
         if (!is_null($this->id)) {
