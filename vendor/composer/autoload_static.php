@@ -16,6 +16,10 @@ class ComposerStaticInit39205f76ca6c915cb2d25d0739b38c42
             'Psr\\Http\\Message\\' => 17,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
+        'N' => 
+        array (
+            'NicolasMoron\\BienesRaices\\' => 26,
+        ),
         'M' => 
         array (
             'Model\\' => 6,
@@ -44,6 +48,10 @@ class ComposerStaticInit39205f76ca6c915cb2d25d0739b38c42
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'NicolasMoron\\BienesRaices\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Model\\' => 
         array (
