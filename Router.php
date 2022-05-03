@@ -30,7 +30,7 @@ class Router
         // $urlActual = $_SERVER['PATH_INFO'] ?? '/';
         // $metodo = $_SERVER['REQUEST_METHOD'];    
         //Metodo apache
-        
+
         $urlActual = $_SERVER['REDIRECT_URL'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 
@@ -53,6 +53,7 @@ class Router
         } else {
             echo "Pagina no Encontrada";
         }
+        debuguear(self::class);
     }
 
     //Muestra una vista
