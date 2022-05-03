@@ -34,8 +34,9 @@ class Router
         $urlActual = $_SERVER['REDIRECT_URL'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 
-        debuguear($this);
         
+
+        debuguear($this->rutasGET[$urlActual]);
         if ($metodo === 'GET') {
 
             $funcion = $this->rutasGET[$urlActual] ?? null;
