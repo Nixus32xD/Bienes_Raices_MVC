@@ -38,9 +38,9 @@ class ActiveRecord {
         $query .= join("', '", array_values($atributos));
         $query .= " ')";
 
-        debuguear($query);
+        
         $resultado = self::$db->query($query);
-
+        debuguear($resultado);
         if ($resultado) {
             // Redireccionar al usuario.
             header('Location: /admin?resultado=1');
