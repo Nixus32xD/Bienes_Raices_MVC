@@ -49,7 +49,6 @@ class PropiedadController
             
             //Setear la imagen
             //Realiza un resize a la imgen con intervention
-            debuguear(CARPETA_IMAGENES);
             $url_img=$_FILES['propiedad']['tmp_name']['imagen'];
             if ($url_img) {
                 $image = ImageManagerStatic::make($url_img);
