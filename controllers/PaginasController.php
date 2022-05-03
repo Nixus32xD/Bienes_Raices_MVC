@@ -15,6 +15,7 @@ class PaginasController
         $propiedades = Propiedad::get(3);
         $inicio = true;
 
+        debuguear($router);
         $router->render('paginas/index', [
             'propiedades' => $propiedades,
             'inicio' => $inicio
