@@ -40,7 +40,6 @@ class PropiedadController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             //Crea una nueva instancia
-            debuguear($_FILES);
             $propiedad = new Propiedad($_POST['propiedad']);
 
             //Subida de archivos
@@ -50,8 +49,8 @@ class PropiedadController
             //Setear la imagen
             //Realiza un resize a la imgen con intervention
             
-            if ($_FILES['propiedad']['tmp_name']['imagen']) {
-                $image = Image::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800, 600);
+            if ($_FILES['propiedad']['tmp_name']) {
+                $image = Image::make($_FILES['propiedad']['tmp_name'])->fit(800, 600);
                 
                 $propiedad->setImagen($nombreImagen);
             }
