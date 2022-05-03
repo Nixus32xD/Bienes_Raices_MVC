@@ -6,12 +6,13 @@ use MVC\Router;
 use Model\Propiedad;
 use PHPMailer\PHPMailer\PHPMailer;
 
-debuguear("Saludando desde el paginas controller");
+
 class PaginasController
 {
 
     public static function index(Router $router)
     {
+        debuguear("Saludando desde el paginas controller");
         $propiedades = Propiedad::get(3);
         $inicio = true;
 
