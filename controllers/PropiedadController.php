@@ -50,7 +50,7 @@ class PropiedadController
             //Setear la imagen
             //Realiza un resize a la imgen con intervention
             $url_img=$_FILES['propiedad']['tmp_name']['imagen'];
-            debuguear($image  = Image::make($url_img));
+            Image::make($url_img)->fit(800,600);
             if ($url_img) {
                 $image = Image::make($url_img)->fit(800, 600);
                
