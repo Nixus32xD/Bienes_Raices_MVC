@@ -5,7 +5,7 @@ namespace Controllers;
 use MVC\Router;
 use Model\Propiedad;
 use Model\Vendedor;
-use Intervention\Image\ImageManagerStatic as Image;
+use Intervention\Image\ImageManagerStatic;
 
 
 class PropiedadController
@@ -52,7 +52,7 @@ class PropiedadController
             debuguear(CARPETA_IMAGENES);
             $url_img=$_FILES['propiedad']['tmp_name']['imagen'];
             if ($url_img) {
-                $image = Image::make($url_img);
+                $image = ImageManagerStatic::make($url_img);
                 $image->fit(800,600);
                
                 $propiedad->setImagen($nombreImagen);
@@ -106,7 +106,7 @@ class PropiedadController
             //Setear la imagen
             //Realiza un resize a la imgen con intervention
             if ($_FILES['propiedad']['tmp_name']['imagen']) {
-                $image = Image::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800, 600);
+                $image = ImageManagerStatic::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800, 600);
                 $propiedad->setImagen($nombreImagen);
             }
 
