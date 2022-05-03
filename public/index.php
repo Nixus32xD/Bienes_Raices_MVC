@@ -19,7 +19,7 @@ $query = "CREATE TABLE 'usuarios' (
     PRIMARY KEY (id)
     )";
 
-    debuguear($query);
+    // debuguear($query);
 $db->query($query);
 
 
