@@ -56,9 +56,10 @@ class PropiedadController
             }
             
             //validar
+            debuguear($errores);
             $errores = $propiedad->validar();
 
-            debuguear($errores);
+            
             if (empty($errores)) {
 
                 if (!is_dir(CARPETA_IMAGENES)) {
