@@ -31,7 +31,6 @@ class ActiveRecord {
     {
         //Sanitizar los datos
         $atributos = $this->sanitizarAtributos();
-        debuguear($atributos);
         //insertar en base de datos
         $query = " INSERT INTO " . static::$tabla . " ( ";
         $query .= join(', ', array_keys($atributos));
@@ -39,6 +38,7 @@ class ActiveRecord {
         $query .= join("', '", array_values($atributos));
         $query .= " ')";
 
+        debuguear($query);
         $resultado = self::$db->query($query);
 
         if ($resultado) {
