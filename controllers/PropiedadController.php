@@ -39,6 +39,7 @@ class PropiedadController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+            debuguear($_SERVER['DOCUMENT_ROOT'] . '/imagenes/');
             //Crea una nueva instancia
             $propiedad = new Propiedad($_POST['propiedad']);
 
@@ -51,7 +52,7 @@ class PropiedadController
             
             if ($_FILES['propiedad']['tmp_name']['imagen']) {
                 $image = Image::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800, 600);
-                debuguear($errores);
+                
                 $propiedad->setImagen($nombreImagen);
             }
             
