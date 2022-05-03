@@ -27,11 +27,11 @@ class Router
         $rutas_protegidas = ['/admin', '/vendedores/crear', '/vendedores/actualizar', '/vendedores/eliminar', '/propiedades/crear', '/propiedades/actualizar', '/propiedades/eliminar'];
 
         //Metodo PHP
-        // $urlActual = $_SERVER['PATH_INFO'] ?? '/';
+        $urlActual = $_SERVER['PATH_INFO'] ?? '/';
         // $metodo = $_SERVER['REQUEST_METHOD'];    
         //Metodo apache
 
-        $urlActual = $_SERVER['REDIRECT_URL'] ?? '/';
+        // $urlActual = $_SERVER['REDIRECT_URL'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 
         echo $_SERVER['PATH_INFO'];
