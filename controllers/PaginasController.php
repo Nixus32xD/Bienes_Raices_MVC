@@ -12,6 +12,7 @@ class PaginasController
 
     public static function index(Router $router)
     {
+        debuguear("Saludando desde el index");
         $propiedades = Propiedad::get(3);
         $inicio = true;
 
