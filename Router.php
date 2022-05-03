@@ -30,9 +30,11 @@ class Router
         // $urlActual = $_SERVER['PATH_INFO'] ?? '/';
         // $metodo = $_SERVER['REQUEST_METHOD'];    
         //Metodo apache
+        
         $urlActual = $_SERVER['REDIRECT_URL'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
-
+        $texto = $urlActual . $metodo;
+        debuguear($texto);
         if ($metodo === 'GET') {
 
             $funcion = $this->rutasGET[$urlActual] ?? null;
