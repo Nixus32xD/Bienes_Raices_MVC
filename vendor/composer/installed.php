@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '795b85b315ec08727a8e0e7884865fc24926d665',
+        'reference' => 'f5b7141c2b4901b36eb240ec27dbef6430d2de75',
         'name' => 'nicolas-moron/bienes-raices',
         'dev' => true,
     ),
@@ -34,7 +34,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '795b85b315ec08727a8e0e7884865fc24926d665',
+            'reference' => 'f5b7141c2b4901b36eb240ec27dbef6430d2de75',
             'dev_requirement' => false,
         ),
         'phpmailer/phpmailer' => array(
