@@ -39,7 +39,7 @@ class PropiedadController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            debuguear(__DIR__ . '/imagenes/');
+            debuguear($_SERVER['DOCUMENT_ROOT'] . '/public/imagenes/');
             //Crea una nueva instancia
             $propiedad = new Propiedad($_POST['propiedad']);
 
