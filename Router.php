@@ -49,7 +49,6 @@ class Router
         if (in_array($urlActual, $rutas_protegidas) && !$auth) {
             header('Location: /');
         }
-        debuguear($funcion);
 
         if ($funcion) {
             // Verifica si la URL existe y hay una funcion asociada
