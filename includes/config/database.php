@@ -2,7 +2,7 @@
 
 function conectarDB() : mysqli{
 
-    $db = new mysqli('ec2-3-211-6-217.compute-1.amazonaws.com','jsmbqhiywvbuvb','ae70d1014203b621887635a743273ca094b4fa7016e6c8bfb8d0f25a8e164608','d6n7iq82veq322');
+    $db = new mysqli('exbodcemtop76rnz.cbetxkdyhwsb.us-east-1.rds.amazonaws.com','ku5s4zc1bj3tp0ck','snszxbhkhjj7geg6','s79kca9swbvvcymf');
 
     if(!$db){
         echo "ERROR no se pudo conectar";
