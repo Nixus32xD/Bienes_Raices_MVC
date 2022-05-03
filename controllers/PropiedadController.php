@@ -38,7 +38,7 @@ class PropiedadController
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+            $image = null;
             //Crea una nueva instancia
             $propiedad = new Propiedad($_POST['propiedad']);
 
@@ -49,9 +49,11 @@ class PropiedadController
             
             //Setear la imagen
             //Realiza un resize a la imgen con intervention
+            debuguear(CARPETA_IMAGENES);
             $url_img=$_FILES['propiedad']['tmp_name']['imagen'];
             if ($url_img) {
-                $image = Image::make($url_img)->fit(800, 600);
+                $image = Image::make($url_img);
+                $image->fit(800,600);
                
                 $propiedad->setImagen($nombreImagen);
             }
