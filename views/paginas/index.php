@@ -1,5 +1,4 @@
 <main class="contenedor seccion">
-   <?php  debuguear("Saludando desde el index"); ?>
         <h2 data-cy="heading-nosotros">Mas Sobre Nosotros</h2>
         
         <?php include 'iconos.php'; ?>
