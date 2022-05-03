@@ -6,7 +6,7 @@ use MVC\Router;
 use Model\Propiedad;
 use PHPMailer\PHPMailer\PHPMailer;
 
-
+debuguear("Saludando desde el paginas controller");
 class PaginasController
 {
 
@@ -15,7 +15,7 @@ class PaginasController
         $propiedades = Propiedad::get(3);
         $inicio = true;
 
-        debuguear("Saludando desde el paginas controller");
+        
         $router->render('paginas/index', [
             'propiedades' => $propiedades,
             'inicio' => $inicio
