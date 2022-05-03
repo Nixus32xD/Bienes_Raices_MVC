@@ -10,8 +10,7 @@ use Controllers\PaginasController;
 
 $router = new Router();
 
-debuguear("Hola");
-debuguear($db);
+debuguear(isset($db));
 
 //Zona privada
 $router->get('/admin', [PropiedadController::class,'index']);
