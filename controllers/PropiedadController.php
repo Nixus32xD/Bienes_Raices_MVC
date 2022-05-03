@@ -46,7 +46,7 @@ class PropiedadController
             //Generar un nombre unico
             $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
 
-            debuguear("Prueba 1");
+            
             //Setear la imagen
             //Realiza un resize a la imgen con intervention
             if ($_FILES['propiedad']['tmp_name']['imagen']) {
@@ -54,7 +54,7 @@ class PropiedadController
                
                 $propiedad->setImagen($nombreImagen);
             }
-            //validar
+            debuguear("Prueba 2");
             
             $errores = $propiedad->validar();
 
