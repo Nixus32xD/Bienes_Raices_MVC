@@ -54,11 +54,11 @@ class PropiedadController
                 
                 $propiedad->setImagen($nombreImagen);
             }
-            debuguear($image);
+            
             //validar
             $errores = $propiedad->validar();
 
-
+            debuguear($errores);
             if (empty($errores)) {
 
                 if (!is_dir(CARPETA_IMAGENES)) {
