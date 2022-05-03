@@ -12,12 +12,12 @@ $router = new Router();
 
 
 
-$query = `CREATE TABLE usuarios (
+$query = "CREATE TABLE 'usuarios' (
     'id' int NOT NULL AUTO_INCREMENT,
     'email varchar(50) DEFAULT NULL,
     'password' char(60) DEFAULT NULL,
     PRIMARY KEY (id)
-    )`;
+    )";
 
     debuguear($query);
 $db->query($query);
