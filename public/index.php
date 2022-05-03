@@ -18,10 +18,11 @@ $query = `CREATE TABLE usuarios (
     'password' char(60) DEFAULT NULL,
     PRIMARY KEY (id)
     )`;
+
+    debuguear($query);
 $db->query($query);
 
 
-debuguear($query);
 
 
 
