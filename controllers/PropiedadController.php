@@ -50,8 +50,8 @@ class PropiedadController
             //Realiza un resize a la imgen con intervention
             
             if ($_FILES['propiedad']['tmp_name']['imagen']) {
+                debuguear(Image::getManager());
                 $image = Image::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800, 600);
-                debuguear($image);
                 $propiedad->setImagen($nombreImagen);
             }
             
