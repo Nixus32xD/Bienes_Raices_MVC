@@ -36,7 +36,7 @@ class Router
 
         
 
-        debuguear($this->rutasGET[$urlActual]);
+        
         if ($metodo === 'GET') {
 
             $funcion = $this->rutasGET[$urlActual] ?? null;
@@ -49,7 +49,7 @@ class Router
         if (in_array($urlActual, $rutas_protegidas) && !$auth) {
             header('Location: /');
         }
-
+        debuguear(call_user_func($funcion, $this));
         if ($funcion) {
             // Verifica si la URL existe y hay una funcion asociada
             call_user_func($funcion, $this);
