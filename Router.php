@@ -34,7 +34,8 @@ class Router
         $urlActual = $_SERVER['REDIRECT_URL'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 
-        
+        echo $_SERVER['PATH_INFO'];
+        echo $_SERVER['REDIRECT_URL'];
 
         
         if ($metodo === 'GET') {
