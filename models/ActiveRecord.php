@@ -106,7 +106,7 @@ class ActiveRecord {
     public function setImagen($imagen)
     {
         //Elimina la imagen previa si existe
-
+debuguear(!is_null($this->id));
         if (!is_null($this->id)) {
             
             $this->borrarImagen();
