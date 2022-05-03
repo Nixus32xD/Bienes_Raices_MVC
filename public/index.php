@@ -10,7 +10,7 @@ use Controllers\PaginasController;
 
 $router = new Router();
 
-$debuguear("Hola");
+debuguear("Hola");
 debuguear($db);
 
 //Zona privada
