@@ -10,6 +10,22 @@ use Controllers\PaginasController;
 
 $router = new Router();
 
+
+
+$query = `CREATE TABLE usuarios (
+    'id' int NOT NULL AUTO_INCREMENT,
+    'email varchar(50) DEFAULT NULL,
+    'password' char(60) DEFAULT NULL,
+    PRIMARY KEY (id)
+    )`;
+$db->query($query);
+
+
+debuguear($query);
+
+
+
+
 //Zona privada
 $router->get('/admin', [PropiedadController::class,'index']);
 $router->get('/propiedades/crear',[PropiedadController::class,'crear']);
