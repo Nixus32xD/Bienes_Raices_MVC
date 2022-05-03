@@ -10,6 +10,7 @@ use Controllers\PaginasController;
 
 $router = new Router();
 
+debuguear("Hola mundo");
 
 //Zona privada
 $router->get('/admin', [PropiedadController::class,'index']);
