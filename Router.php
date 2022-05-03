@@ -34,6 +34,8 @@ class Router
         $urlActual = $_SERVER['REDIRECT_URL'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 
+        debuguear($this);
+        
         if ($metodo === 'GET') {
 
             $funcion = $this->rutasGET[$urlActual] ?? null;
@@ -53,7 +55,7 @@ class Router
         } else {
             echo "Pagina no Encontrada";
         }
-        debuguear(self::class);
+        
     }
 
     //Muestra una vista
