@@ -38,6 +38,7 @@ class PropiedadController
 
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $image = null;
             //Crea una nueva instancia
             $propiedad = new Propiedad($_POST['propiedad']);
 
@@ -45,22 +46,21 @@ class PropiedadController
             //Generar un nombre unico
             $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
 
-            
+
             //Setear la imagen
             //Realiza un resize a la imgen con intervention
-            $url_img=$_FILES['propiedad']['tmp_name']['imagen'];
-            debuguear($url_img . " Esa es la url de la imagen y esta es la carpeta donde se guarda: " . CARPETA_IMAGENES);
+            $url_img = $_FILES['propiedad']['tmp_name']['imagen'];
 
             if ($url_img) {
                 $image = Image::make($url_img);
-                $image->fit(800,600);
-               
+                $image->fit(800, 600);
+
                 $propiedad->setImagen($nombreImagen);
             }
-            
+
             $errores = $propiedad->validar();
 
-            
+
             if (empty($errores)) {
 
                 if (!is_dir(CARPETA_IMAGENES)) {
@@ -93,7 +93,7 @@ class PropiedadController
         $vendedores = Vendedor::all();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+            $image = null;
             //Asignar los atributos
             $args = $_POST['propiedad'];
 
@@ -105,13 +105,12 @@ class PropiedadController
 
             //Setear la imagen
             //Realiza un resize a la imgen con intervention
-            
-            $url_img=$_FILES['propiedad']['tmp_name']['imagen'];
-            debuguear($url_img . " Esa es la url de la imagen y". __DIR__ ." esta es la carpeta donde se guarda: " . CARPETA_IMAGENES);
+
+            $url_img = $_FILES['propiedad']['tmp_name']['imagen'];
             if ($url_img) {
                 $image = Image::make($url_img);
-                $image->fit(800,600);
-               
+                $image->fit(800, 600);
+
                 $propiedad->setImagen($nombreImagen);
             }
 
@@ -139,7 +138,7 @@ class PropiedadController
 
     public static function eliminar()
     {
-        
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             //Validar id
@@ -151,7 +150,7 @@ class PropiedadController
 
                 if (validarTipoContenido($tipo)) {
 
-                    $propiedad = Propiedad::find($id);  
+                    $propiedad = Propiedad::find($id);
                     $propiedad->eliminar();
                 }
             }
