@@ -51,9 +51,8 @@ class PropiedadController
             //Realiza un resize a la imgen con intervention
             $url_img=$_FILES['propiedad']['tmp_name']['imagen'];
             if ($url_img) {
-                $image = Image::make($url_img);
-                $image->fit(800,600);
-               
+                $image = Image::make($url_img)->fit(800,600);
+                
                 $propiedad->setImagen($nombreImagen);
             }
             
@@ -106,9 +105,7 @@ class PropiedadController
             //Realiza un resize a la imgen con intervention
             $url_img=$_FILES['propiedad']['tmp_name']['imagen'];
             if ($url_img) {
-                $image = Image::make($url_img);
-                $image->fit(800,600);
-               
+                $image = Image::make($url_img)->fit(800, 600);
                 $propiedad->setImagen($nombreImagen);
             }
 
