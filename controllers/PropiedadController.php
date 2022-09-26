@@ -37,42 +37,35 @@ class PropiedadController
         $errores = Propiedad::getErrores();
 
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $image = null;
-            //Crea una nueva instancia
-            $propiedad = new Propiedad($_POST['propiedad']);
-
-            //Subida de archivos
-            //Generar un nombre unico
-            $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
-
-
-            //Setear la imagen
-            //Realiza un resize a la imgen con intervention
-            $url_img = $_FILES['propiedad']['tmp_name']['imagen'];
-
-            if ($url_img) {
-                $image = Image::make($url_img);
-                $image->fit(800, 600);
-
-                $propiedad->setImagen($nombreImagen);
-            }
-
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            //Asignar los atributos
+            $args = $_POST['propiedad'];
+            $propiedad->sincronizar($args);
+     
             $errores = $propiedad->validar();
-
-
+            
+            //Revisar que el arreglo de errores esté vacío
             if (empty($errores)) {
-
-                if (!is_dir(CARPETA_IMAGENES)) {
-                    mkdir(CARPETA_IMAGENES);
+                
+                if ($_FILES['propiedad']['tmp_name']['imagen']) {
+                    
+                    //Generar un nombre único
+                    $nombreImagen = md5( uniqid( rand(), true) ) . ".jpg";
+     
+                    //Realiza un resize a la imagen con intervention
+                    $image = Image::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800,600);
+     
+                    /*Setear la imagen*/
+                    $propiedad->setImagen($nombreImagen);
+     
+                    //Guarda la imagen en el servidor
+                    $image->save(CARPETA_IMAGENES . $nombreImagen);
                 }
-
-                //Guarda la imagen en el servidor
-                $image->save(CARPETA_IMAGENES . $nombreImagen);
-                //Guardar en la base de datos
+     
                 $propiedad->guardar();
-            }
+            }   
         }
+        
 
         $router->render('propiedades/crear', [
             'propiedad' => $propiedad,
