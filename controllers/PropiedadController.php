@@ -60,7 +60,6 @@ class PropiedadController
 
             $errores = $propiedad->validar();
 
-           debuguear( CARPETA_IMAGENES . $nombreImagen);
 
             if (empty($errores)) {
 
