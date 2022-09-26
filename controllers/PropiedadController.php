@@ -51,7 +51,6 @@ class PropiedadController
             //Realiza un resize a la imgen con intervention
             $url_img = $_FILES['propiedad']['tmp_name']['imagen'];
 
-            debuguear($url_img);
             if ($url_img) {
                 $image = Image::make($url_img);
                 $image->fit(800, 600);
@@ -61,6 +60,7 @@ class PropiedadController
 
             $errores = $propiedad->validar();
 
+           debuguear( CARPETA_IMAGENES . $nombreImagen);
 
             if (empty($errores)) {
 
