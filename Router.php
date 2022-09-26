@@ -27,23 +27,30 @@ class Router
         $rutas_protegidas = ['/admin', '/vendedores/crear', '/vendedores/actualizar', '/vendedores/eliminar', '/propiedades/crear', '/propiedades/actualizar', '/propiedades/eliminar'];
 
         //Metodo PHP
-        $urlActual = $_SERVER['PATH_INFO'] ?? '/';
-        // $metodo = $_SERVER['REQUEST_METHOD'];    
-        //Metodo apache
+        // $urlActual = $_SERVER['PATH_INFO'] ?? '/';
+        // // $metodo = $_SERVER['REQUEST_METHOD'];    
+        // //Metodo apache
 
-        // $urlActual = $_SERVER['REDIRECT_URL'] ?? '/';
-        $metodo = $_SERVER['REQUEST_METHOD'];
-        
-        if ($metodo === 'GET') {
+        // // $urlActual = $_SERVER['REDIRECT_URL'] ?? '/';
+        // $metodo = $_SERVER['REQUEST_METHOD'];
 
-            $funcion = $this->rutasGET[$urlActual] ?? null;
+        if (isset($_SERVER['PATH_INFO'])) {
+            $currentUrl = $_SERVER['PATH_INFO'] ?? '/';
+        } else {
+            $currentUrl = $_SERVER['REQUEST_URI'] === '' ? '/' : $_SERVER['REQUEST_URI'];
+        }
+
+        $method = $_SERVER['REQUEST_METHOD'];
+        if ($method === 'GET') {
+
+            $funcion = $this->rutasGET[$currentUrl] ?? null;
         } else {
 
-            $funcion = $this->rutasPOST[$urlActual] ?? null;
+            $funcion = $this->rutasPOST[$currentUrl] ?? null;
         }
 
         //Proteger rutas
-        if (in_array($urlActual, $rutas_protegidas) && !$auth) {
+        if (in_array($currentUrl, $rutas_protegidas) && !$auth) {
             header('Location: /');
         }
 
@@ -53,7 +60,6 @@ class Router
         } else {
             echo "Pagina no Encontrada";
         }
-        
     }
 
     //Muestra una vista
