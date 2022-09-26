@@ -67,9 +67,9 @@ class PropiedadController
                     mkdir(CARPETA_IMAGENES);
                 }
 
+                debuguear(CARPETA_IMAGENES . $nombreImagen);
                 //Guarda la imagen en el servidor
                 $image->save(CARPETA_IMAGENES . $nombreImagen);
-                debuguear(CARPETA_IMAGENES . $nombreImagen);
                 //Guardar en la base de datos
                 $propiedad->guardar();
             }
